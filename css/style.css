@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --background-color : #FFFFFF;
+    --support-color : #c1c6ceae;
+    --primary-color: #4770FF;
+    --button-color : #1A1F2C;
+    --bd-bg-color : #B3D698;
+}
+
+body.dark-mode {
+    --background-color : #000000;
+    --support-color : #0E1018;
+    --primary-color: #4770FF;
+    --button-color : #1A1F2C;
+}
+
+body {
+    background-color: var(--bd-bg-color);
+    padding: 1rem 4rem 0rem 4rem;
+}
+
+nav {
+    padding: 1rem .5rem 1rem 1rem;
+    background-color: var(--background-color);
+    height: 80px;
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+}
+
+nav .logo i {
+    font-size: 2rem;
+}
+
+nav .logo h2 {
+    font-size: 2rem;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+nav .menus ul{
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .menus ul li a{
+    color: #626A80;
+    font-size: 1.5rem;
+    padding: .5rem .6rem;
+    border-radius: 6px;
+}
+
+nav .menus ul li a:hover, .active{
+    background-color: var(--support-color);
+    color: #272a34;
+}
+
+nav .menus ul li i {
+    margin-right: 7px;
+}
+
+nav .rg-tp-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+}
+nav .rg-tp-btn .dark-light i{
+    padding: .5rem;
+    border-radius: 4px;
+}
+nav .rg-tp-btn .dark-light i:hover{
+    background-color: var(--support-color);
+    color: #272a34;
+}
+
+nav .rg-tp-btn .cta-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: .9rem 1.2rem;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    background-color: var(--button-color);
+}
+
+nav .rg-tp-btn .cta-btn:hover{
+    background-color: var(--primary-color);
+    border: none;
+}
+
+nav .rg-tp-btn .cta-btn i {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+
+
