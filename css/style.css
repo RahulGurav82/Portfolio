@@ -14,13 +14,14 @@
     --primary-color: #4770FF;
     --button-color : #1A1F2C;
     --bd-bg-color : #F7EFE5;
+    --text-color : #1A1F2C;
 }
 
 body.dark-mode {
     --background-color : #000000;
     --support-color : #0E1018;
-    --primary-color: #4770FF;
-    --button-color : #1A1F2C;
+    --text-color : #ced5e5;
+
 }
 
 body {
@@ -71,7 +72,7 @@ nav .menus ul li a{
 
 nav .menus ul li a:hover, .active{
     background-color: var(--support-color);
-    color: #272a34;
+    color: var(--text-color);
 }
 
 nav .menus ul li i {
@@ -91,6 +92,10 @@ nav .rg-tp-btn .dark-light i{
 nav .rg-tp-btn .dark-light i:hover{
     background-color: var(--support-color);
     color: #272a34;
+}
+
+#dark, #light {
+    color: var(--text-color);
 }
 
 nav .rg-tp-btn .cta-btn {
@@ -119,6 +124,7 @@ nav .rg-tp-btn .cta-btn i {
     display: none;
     background: none;
     border: none;
+    color: var(--text-color);
 }
 
 /* sidebar */
@@ -131,7 +137,6 @@ nav .rg-tp-btn .cta-btn i {
     top: 0;
     left: 0;
     background-color: var(--background-color);
-    /* padding: 20px 0 20px 8px; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -173,13 +178,14 @@ nav .rg-tp-btn .cta-btn i {
 }
 
 .sidebar .top .menus ul li a{
-    color: #626A80;
+    color: var(--text-color);
     font-size: 1.5rem;
     padding: .5rem 2rem;
     border-radius: 6px;
     display: flex;
     align-items: center;
     gap: 10px;
+    transition: .3s;
 }
 
 .sidebar .top .menus ul li a:hover, .active{
@@ -204,16 +210,22 @@ nav .rg-tp-btn .cta-btn i {
 .sidebar .bottom .rg-tp-btn .dark-light {
     padding: .5rem;
     border-radius: 6px;
-    color: var(--button-color);
+    color: var(--text-color);
     font-size: 1rem;
     display: flex;
     align-items: center;
     gap: .7rem;
     margin-bottom: 10px;
+    transition: .3s;
+}
+
+.sidebar .bottom .rg-tp-btn .dark-light #light {
+    display: none;
 }
 
 .sidebar .bottom .rg-tp-btn .dark-light:hover{
     background-color: var(--support-color);
+    transition: .3s;
 }
 
 .sidebar .bottom .rg-tp-btn .cta-btn {
@@ -237,6 +249,8 @@ nav .rg-tp-btn .cta-btn i {
     font-size: 1.4rem;
     font-weight: 600;
 }
+
+
 
 body.sidebar-open {
     overflow: hidden;
