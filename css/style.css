@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Matemasie&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Matemasie&family=Pacifico&display=swap');
 
 *{
     padding: 0;
@@ -6,6 +8,10 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 
 :root {
@@ -188,9 +194,9 @@ nav .rg-tp-btn .cta-btn i {
     transition: .3s;
 }
 
-.sidebar .top .menus ul li a:hover, .active{
+.sidebar .top .menus ul li .active, a:hover {
     background-color: var(--support-color);
-    color: #272a34;
+    color: var(--background-color);
 }
 
 .sidebar .top .menus ul li{
@@ -250,10 +256,97 @@ nav .rg-tp-btn .cta-btn i {
     font-weight: 600;
 }
 
-
-
 body.sidebar-open {
     overflow: hidden;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+section .top {
+    display: flex;
+    margin-top: 1rem;
+}
+
+section .top .col-1 {
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 1rem;
+}
+
+section .top .col-1 .profile-pic {
+    background-color: var(--support-color);
+    width: 400px;
+    height: 280px;
+    border-radius: 10px;
+}
+
+section .top .col-1 h2 {
+    font-family: "Matemasie", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+section .top .col-1 p {
+    word-spacing: 7px;
+    margin-top: 1rem;
+    color: var(--text-color);
+}
+
+section .top .col-1 .btn {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+}
+
+section .top .col-1 .btn button {
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+section .top .col-1 .btn .call-btn {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+section .top .col-1 .btn .call-btn:hover {
+    opacity: .8;
+}
+
+section .top .col-1 .btn .email-btn {
+    background-color: var(--background-color);
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+}
+
+section .top .col-1 .btn .email-btn:hover {
+    background-color: var(--support-color);
+}
+
+section .top .col-1 .social-link {
+    margin-top: 1rem;
+    display: flex;
+    gap: 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+section .top .col-1 .social-link i {
+    padding: .5rem;
+    background-color: var(--support-color);
+    color: var(--text-color);
+    border: 1px solid black;
+    border-radius: 9px;
 }
 
 /* media query */
