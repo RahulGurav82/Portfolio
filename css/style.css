@@ -349,6 +349,10 @@ section .top .col-1 .social-link i {
     border-radius: 9px;
 }
 
+section .top .col-2 {
+    padding: 1rem;
+}
+
 /* media query */
 
 @media (max-width : 1310px) {
