@@ -5,74 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Infinite Scroll</title>
   <style>
-.display{
-    border: 2px solid black;
-    width: 400px;
-    margin-inline: auto;
-    height: 600px;
-    position: relative;
-    overflow: hidden;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-@keyframes scrollleft {
 
-    to{
-      top: -200px;    
-    }
+* {
+  margin: 0;
 }
-.display .item {
-    width: 200px;
+
+.wrapper {
+  width: 90%;
+  max-width: 1536px;
+  margin-inline: auto;
+  position: relative;
   height: 100px;
-  background-color: #e11d48;
+  margin-top: 5rem;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+@keyframes scrollLeft {
+  to {
+    left: -200px;
+  }
+}
+
+.item {
+  width: 200px;
+  height: 100px;
+  background-color: red;
   border-radius: 6px;
   position: absolute;
-  animation-timing-function: linear;
+  left: max(calc(200px * 8), 100%);
+  animation-name: scrollLeft;
   animation-duration: 30s;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
-    left: max(calc(200px * 8), 100%);
-    animation-name: scrollLeft;
 }
 
-.display .item1 {
-    animation-delay: calc(30s / 14 * (8 - 1) * -1);
+.item1 {
+  animation-delay: calc(30s / 8 * (8 - 1) * -1);
 }
-.display .item2 {
-    animation-delay: calc(30s / 14 * (8 - 2) * -1);
+
+.item2 {
+  animation-delay: calc(30s / 8 * (8 - 2) * -1);
 }
-.display .item3 {
-    animation-delay: calc(30s / 14 * (8 - 3) * -1);
+
+.item3 {
+  animation-delay: calc(30s / 8 * (8 - 3) * -1);
 }
-.display .item4 {
-    animation-delay: calc(30s / 14 * (8 - 4) * -1);
+
+.item4 {
+  animation-delay: calc(30s / 8 * (8 - 4) * -1);
 }
-.display .item5 {
-    animation-delay: calc(30s / 14 * (8 - 5) * -1);
+
+.item5 {
+  animation-delay: calc(30s / 8 * (8 - 5) * -1);
 }
-.display .item6 {
-    animation-delay: calc(30s / 14 * (8 - 6) * -1);
+
+.item6 {
+  animation-delay: calc(30s / 8 * (8 - 6) * -1);
 }
-.display .item7 {
-    animation-delay: calc(30s / 14 * (8 - 7) * -1);
+
+.item7 {
+  animation-delay: calc(30s / 8 * (8 - 7) * -1);
 }
-.display .item8 {
-    animation-delay: calc(30s / 14 * (8 - 8) * -1);
-}
-.display .item9 {
-    animation-delay: calc(30s / 14 * (8 - 9) * -1);
-}
-.display .item10 {
-    animation-delay: calc(30s / 14 * (8 - 10) * -1);
-}
-.display .item11 {
-    animation-delay: calc(30s / 14 * (8 - 11) * -1);
-}
-.display .item12 {
-    animation-delay: calc(30s / 14 * (8 - 12) * -1);
-}
-.display .item13 {
-    animation-delay: calc(30s / 14 * (8 - 13) * -1);
-}
-.display .item14 {
-    animation-delay: calc(30s / 14 * (8 - 14) * -1);
+
+.item8 {
+  animation-delay: calc(30s / 8 * (8 - 8) * -1);
 }
 
   </style>
@@ -80,7 +88,7 @@
 <body>
     <div class="work-experience">
         <h2>Work Experience</h2>
-        <div class="display">
+        <div class="wrapper">
             <div class="item item1"></div>
             <div class="item item2"></div>
             <div class="item item3"></div>
@@ -89,13 +97,7 @@
             <div class="item item6"></div>
             <div class="item item7"></div>
             <div class="item item8"></div>
-            <div class="item item9"></div>
-            <div class="item item10"></div>
-            <div class="item item11"></div>
-            <div class="item item12"></div>
-            <div class="item item13"></div>
-            <div class="item item14"></div>
-        </div>
+          </div>
     </div>    
   <script>
    
