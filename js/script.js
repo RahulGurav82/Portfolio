@@ -1,24 +1,43 @@
-function openSidebar() {
-    console.log("ll")
-    document.getElementById("sidebar").style.width = "250px";
-    document.body.classList.add("sidebar-open");
+
+
+const checkbox = document.getElementById("checkbox")
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark-mode")
+})
+
+
+// infinite scrolling effect
+
+const scrollContainer = document.getElementById('scrollContainer');
+let scrollInterval;
+
+// Function to start auto-scrolling from bottom to top
+function startAutoScroll() {
+    scrollContainer.scrollTop = scrollContainer.scrollHeight; // Scroll to the bottom initially
+
+    scrollInterval = setInterval(() => {
+        scrollContainer.scrollBy({
+            top: -1, // Scroll upward (negative value)
+            behavior: 'smooth'
+        });
+
+        // If the scroll reaches the top, reset to the bottom to create infinite scroll
+        if (scrollContainer.scrollTop === 0) {
+            scrollContainer.scrollTop = scrollContainer.scrollHeight;
+        }
+    }, 20); // Adjust the speed (lower value = faster scroll)
 }
 
-function closeSidebar() {
-    document.getElementById("sidebar").style.width = "0";
-    document.body.classList.remove("sidebar-open");
+// Function to stop scrolling
+function stopAutoScroll() {
+    clearInterval(scrollInterval); // Stop the interval that controls the scrolling
 }
 
-function toggleDarkLight(mode) {
-    if(mode === "dark") {
-        console.log("dark")
-        document.getElementById("dark").style.display = "none";
-        document.getElementById("light").style.display = "inline-block";
-        document.body.classList.add("dark-mode"); // Add dark-mode class to body
-    } else {
-        console.log("light")
-        document.getElementById("light").style.display = "none";
-        document.getElementById("dark").style.display = "inline-block";
-        document.body.classList.remove("dark-mode"); // Add dark-mode class to body 
-    }
-}
+// Start scrolling automatically
+startAutoScroll();
+
+// Stop scrolling when the user hovers over the display
+scrollContainer.addEventListener('mouseover', stopAutoScroll);
+
+// Resume scrolling when the mouse leaves the display
+scrollContainer.addEventListener('mouseout', startAutoScroll);
