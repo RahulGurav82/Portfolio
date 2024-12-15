@@ -267,7 +267,7 @@ nav .rg-tp-btn .cta-btn i {
 }
 
 .sidebar .top .menus ul li .active, a:hover {
-    background-color: var(--support-color);
+    /* background-color: var(--support-color); */
     color: var(--background-color);
 }
 
@@ -445,7 +445,6 @@ section .top .col-1 .btn .email-btn:hover {
 section .top .col-1 .social-link {
     margin-top: 2rem;
     display: flex;
-    /* gap: 3rem; */
     justify-content: space-between;
     font-size: 1.5rem;
     cursor: pointer;
@@ -485,13 +484,32 @@ section .top .col-2 h2 {
 }
 
 section .top .col-2 .display {
-    display: block;
-    overflow-y: auto; /* Enable vertical scrolling */
-    scroll-behavior: smooth; /* Smooth scrolling behavior */
-    position: relative;
-    margin-top: 10px;
     height: 250px;
     width: 100%;
+    margin-top: 10px;
+    scroll-behavior: smooth; /* Smooth scrolling behavior */
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+section .top .col-2 .display .content {
+    display: flex;
+    flex-direction: column;
+    animation: scroll 13s linear infinite;
+}
+
+section .top .col-2 .display:hover .content {
+    animation-play-state: paused; /* Pause the animation on hover */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%); /* Adjust based on total height */
+    }
 }
 
 section .top .col-2 .item {
