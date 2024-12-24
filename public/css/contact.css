@@ -1,0 +1,15 @@
+:root {
+    --background-color : #FFFFFF;
+    --support-color : #c1c6ceae;
+    --primary-color: #4770FF;
+    --button-color : #1A1F2C;
+    --bd-bg-color : #F7EFE5;
+    --text-color : #1A1F2C;
+}
+
+.scroll {
+    height: 100%;
+    width: 100%;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
