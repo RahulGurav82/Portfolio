@@ -2,3 +2,18 @@
 <%- include("./includes/col-1.ejs") %>
 <%- include("./includes/col-2.ejs") %>
 <%- include("./includes/col-3.ejs") %>
+<script src="/js/script.js"></script>
+<script>
+    const copyButton = document.querySelector(".email-btn");
+const email = document.querySelector("#email-to-copy").textContent;
+
+copyButton.addEventListener("click", ()=> {
+    navigator.clipboard.writeText(email)
+    .then(()=> {
+        alert("email copied to clipboard");
+    })
+    .catch(err => {
+        console.log("copy err". err);
+    })
+});
+</script>

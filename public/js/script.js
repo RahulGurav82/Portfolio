@@ -1,5 +1,4 @@
 
-
 // light-dark button
 
 const themeToggle = document.getElementById("theme-toggle");
@@ -39,11 +38,10 @@ function closeSidebarOnClickOutside(event) {
     }
 }
 
-
 // loop scrolling
 const scrollContainer = document.querySelector('.display');
 const content = document.querySelector('.content');
-console.log(content);
+// console.log(content);
 // Duplicate the content for seamless scrolling
 content.innerHTML += content.innerHTML;
 
