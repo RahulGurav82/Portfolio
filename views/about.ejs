@@ -1,2 +1,97 @@
-<% layout("/layouts/boilerplate") %>
-<%- include("./includes/col-1.ejs") %>
+<% layout('layouts/boilerplate', { rightClass: 'work-right' }) %>
+<link rel="stylesheet" href="/css/about.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="about">
+    <div class="about-top">
+        <h1>Hi, This Is <span>Rahul Gurav</span> 👋</h1>
+        <div class="indicator">Available For Hire</div>
+    </div>
+    <p id="p">A Passionate <span>Full Stack Developer</span> 🖥️ & Product Designer having <span>2 years</span> of Experiences over 24+ Country Worldwide.</p>
+    <div class="completation">
+        <div class="quantity">
+            <div class="box">
+                <div class="number">2+</div>
+                <div class="txt">Year of Experience</div>
+            </div>
+            <div class="box">
+                <div class="number">10+</div>
+                <div class="txt">Project Completed</div>
+            </div>
+            <div class="box">
+                <div class="number">5+</div>
+                <div class="txt">Happy Client</div>
+            </div>
+        </div>
+        <div class="rotator">
+            <div class="circle">
+                <div class="logotech">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+                <div class="text">
+                    <p id="rt">side scroll side scroll</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="technology">
+        <h1>Working With 50+ Brands ✨ Worldwide</h1>
+        <div class="tech">
+            <div class="row">
+                <div class="box">
+                    <img src="/images/html.svg" alt="" srcset="">
+                </div>
+                <div class="box">
+                    <img src="/images/css.svg" alt="" srcset="">
+                </div>
+                <div class="box">
+                    <img src="/images/tailwind-css.svg" alt="" srcset="">
+                </div>
+                <div class="box">
+                    <img src="/images/javascript.svg" alt="" srcset="">
+                </div>
+                <div class="box">
+                    <img src="/images/docker.svg"" alt="" srcset="">
+                </div>
+                <div class="box">
+                    <img src="/images/react.svg" alt="" srcset="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="box">
+                    <img src="/images/redux.svg"" alt="" srcset="">
+                </div>
+                <div class="box" style="color: white; background: white;">
+                    <img src="/images/nodejs.svg" alt="" srcset="">
+                </div>
+                <div class="box" style="color: white; background: white;">
+                    <img src="/images/express.svg"" alt="" srcset="">
+                </div>
+                <div class="box">
+                    <img src="/images/mongodb.svg"" alt="" srcset="">
+                </div>
+                <div class="box">
+                    <img src="/images/tailwind-css.svg" alt="" srcset="">
+                </div>
+                <div class="box">
+                    <img src="/images/docker.svg"" alt="" srcset="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slider">
+       <marquee behavior="" direction=""><p><span></span>Let's 👋 Work Together  Let's 👋 Work Together  Let's 👋 Work Together  826292
+        Let's 👋 Work Together</p></marquee>
+    </div>
+</div>
+
+<script>
+    let text = document.querySelector(".text p");
+    let chars = text.innerText.split("");
+    let degree = 360 / chars.length; // Dynamically calculate spacing
+
+    text.innerHTML = chars
+    .map((char, i) => `<span style="transform: rotate(${i * degree}deg)">${char}</span>`)
+    .join("");
+</script>

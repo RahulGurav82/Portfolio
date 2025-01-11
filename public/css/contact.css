@@ -7,9 +7,145 @@
     --text-color : #1A1F2C;
 }
 
-.scroll {
+body.dark-mode {
+    --background-color : #000000;
+    --support-color : #0E1018;
+    --text-color : #ffffff; /* #ced5e5*/
+}
+
+.contacts {
+    background: var(--background-color);
+    color: var(--text-color);
+    height: 100vh;
+    border-radius: 15px;
+    padding: 1rem;
+    overflow: scroll;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer */
+}
+
+.contacts::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Webkit-based browsers */
+}
+
+.contact h1{
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.contact h1 span {
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.contact p {
+    color: var(--text-color);
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.contact-form {
+    margin-top: 1.5rem;
+    padding: 2.8rem;
+    background: var(--support-color);
+    border-radius: 15px;
+    /* height: 450px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form form {
     height: 100%;
     width: 100%;
+}
+
+.contact-form form .row {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.contact-form form .comment {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.contact-form form textarea {
+    height: 80px;
+    margin-top: 8px;
+    border: 3px var(--support-color);
+    outline: none;
+    border-radius: 10px;
     color: var(--text-color);
-    background-color: var(--background-color);
+    font-size: 1.2rem;
+    background: var(--background-color);
+    padding: 1rem;
+}
+
+.contact-form form button {
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+    background-color: var(--primary-color);
+    border: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    color: var(--text-color);
+}
+
+.contact-form form .row .input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1rem;
+}
+
+.contact-form form .row .input input {
+    height: 50px;
+    width: 100%;
+    margin-top: 8px;
+    border: 3px var(--support-color);
+    outline: none;
+    border-radius: 10px;
+    color: var(--text-color);
+    padding: 1rem;
+    font-size: 1.2rem;
+    background: var(--background-color);
+}
+
+.location {
+    margin-top: 2rem;
+    height: 450px;
+    width: 100%;
+    border-radius: 15px;
+    background-color: var(--support-color);
+}
+
+.location iframe {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+}
+
+@media (max-width : 777px) {
+    .contact-form form .row {
+        flex-direction: column;
+    }
+    .contact-form {
+        padding: 1rem;
+    }
+    label {
+        margin-top: 1rem;
+    }
 }

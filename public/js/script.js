@@ -1,15 +1,28 @@
+// Function to toggle dark mode and save to localStorage
+function toggleDarkMode() {
+    const isDarkMode = document.body.classList.toggle("dark-mode");
+    localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
+}
 
-// light-dark button
+// Load dark mode state from localStorage
+function loadDarkMode() {
+    const darkMode = localStorage.getItem("darkMode");
+    if (darkMode === "enabled") {
+      document.body.classList.add("dark-mode");
+      document.getElementById("theme-toggle").checked = true;
+      document.getElementById("mode-switch").checked = true;
+    }
+}
 
+// Attach event listeners
 const themeToggle = document.getElementById("theme-toggle");
-themeToggle.addEventListener("change", () => {
-  document.body.classList.toggle("dark-mode");
-});
+themeToggle.addEventListener("change", toggleDarkMode);
 
 const modeSwitch = document.getElementById("mode-switch");
-modeSwitch.addEventListener("change", () => {
-    document.body.classList.toggle("dark-mode");
-});
+modeSwitch.addEventListener("change", toggleDarkMode);
+
+// Load the saved state on page load
+loadDarkMode();
 
 // sidebar menu
 
