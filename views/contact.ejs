@@ -42,3 +42,24 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.8149767366044!2d73.0508510749802!3d19.18359748204328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7bfb016766b43%3A0x12dc19a796b22856!2sDiva-Agasan%20Rd%2C%20Thane%2C%20Maharashtra%20400612!5e1!3m2!1sen!2sin!4v1736587668324!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    
     </div>
 </div>
+<script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault(); // Prevent default form submission
+        const formData = new FormData(form);
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData,
+            });
+            const result = await response.json();
+            if (result.success) {
+                alert('Message sent successfully!');
+            } else {
+                alert('Failed to send message: ' + result.message);
+            }
+        } catch (error) {
+            alert('An error occurred: ' + error.message);
+        }
+    });
+</script>
