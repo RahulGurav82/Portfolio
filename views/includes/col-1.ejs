@@ -1,0 +1,96 @@
+<script src="/js/script.js"></script>
+<div class="col-1">
+    <div class="profile-pic">
+    </div>
+    <div class="info">
+        <h2>Rahul Gurav   👋</h2>
+        <p>
+            A Passionate Full Stack Developer 🖥️& Having 2 years of Experiences With 1 Real-World Project.
+            Now Work In Infosys
+        </p>
+        <div class="btn">
+            <button class="call-btn">
+                <i class='bx bx-phone-call'></i>
+                Book A Call
+            </button>
+            <button class="email-btn">
+                <i class='bx bx-copy' ></i>
+                Copy Email
+            </button>
+            <span id="email-to-copy" style="display: none;">guravrahul988@gmail.com</span>
+        </div>
+        <div class="social-link">
+            <a href="https://www.linkedin.com/in/rahul-gurav-3b8a04331/" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/RahulGurav82" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github' id="github-logo"></i></a>
+            <a href="http://" target="_blank" rel="noopener noreferrer">
+                <i class='bx bxl-instagram' 
+                style="color: rgb(237,133,6);
+                       color: linear-gradient(18deg, rgba(237,133,6,1) 6%, rgba(255,0,92,1) 46%, rgba(237,11,252,1) 85%);">
+                </i>
+            </a>
+            <a href="http://" target="_blank" rel="noopener noreferrer"><i class='bx bxl-facebook' ></i></a>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const copyButton = document.querySelector(".email-btn");
+        const email = document.querySelector("#email-to-copy").textContent;
+
+        copyButton.addEventListener("click", ()=> {
+            navigator.clipboard.writeText(email)
+            .then(()=> {
+                alert("email copied to clipboard");
+            })
+            .catch(err => {
+                console.log("copy err". err);
+            });
+        });
+
+        // call button
+        const callButton = document.querySelector(".call-btn");
+        callButton.addEventListener("click", () => {
+
+            const isMobile = /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+            if(isMobile) {
+                window.location.href = 'tel:+919137408709';
+            } else {
+                showPopup();
+            }
+
+            // Function to show a popup
+            function showPopup() {
+                // Create a basic popup (you can style it as needed)
+                const popup = document.createElement('div');
+                popup.style.position = 'fixed';
+                popup.style.top = '50%';
+                popup.style.left = '50%';
+                popup.style.transform = 'translate(-50%, -50%)';
+                popup.style.padding = '20px';
+                popup.style.backgroundColor = '#1199FF';
+                popup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+                popup.style.borderRadius = '8px';
+                popup.style.zIndex = '1000';
+
+                // Add content to the popup
+                popup.innerHTML = `
+                    <h3>Schedule a Call</h3>
+                    <p>Please use our contact form or email us to schedule a call.</p>
+                    <button id="close-popup" style="margin-top: 10px; padding: 5px 10px; background: #EEAA00; border : 1px solid #003366">Close</button>
+                `;
+
+                // Append the popup to the body
+                document.body.appendChild(popup);
+
+                // Close the popup on button click
+                const closeButton = document.getElementById('close-popup');
+                closeButton.addEventListener('click', () => {
+                    document.body.removeChild(popup);
+                });
+            }
+        });
+    });
+    
+</script>
+<script src="/js/script.js"></script>
